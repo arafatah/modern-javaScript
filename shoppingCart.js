@@ -2,7 +2,7 @@
 console.log('Exporting module');
 
 const shippingCost = 10;
-const cart = [];
+export const cart = [];
 
 // There is two type of exports: default and named
 // export default cart;
@@ -14,9 +14,17 @@ export const addToCart = function (product, quantity) {
   console.log(`${quantity} ${product} added to cart`);
 };
 
-// export mutliple things
+// export multiple things
 
- const totalPrice = 237;
- const totalQuantity = 23;
+const totalPrice = 237;
+const totalQuantity = 23;
 
- export { totalPrice, totalQuantity  };
+export { totalPrice, totalQuantity };
+
+// We use default exports when we want to export one thing
+// We use named exports when we want to export multiple things
+
+export default function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(`${quantity} ${product} added to cart`);
+}
