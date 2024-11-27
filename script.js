@@ -45,8 +45,8 @@ console.log('done with fetching'); */
 };
 
 getLastPost(); */
-
-(function () {
+/* 
+const shoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
   const totalPrice = 237;
@@ -54,7 +54,9 @@ getLastPost(); */
 
   const addToCart = function (product, quantity) {
     cart.push({ product, quantity });
-    console.log(`${quantity} ${product} added to cart`);
+    console.log(
+      `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
+    );
   };
 
   const orderStock = function (product, quantity) {
@@ -68,9 +70,27 @@ getLastPost(); */
     totalPrice,
     totalQuantity,
   };
-})();
+})(); 
 
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+shoppingCart2.addToCart('apple', 30);
+shoppingCart2.addToCart('pizza', 30);
+console.log(shoppingCart2);
+console.log(shoppingCart2.shippingCost);
+*/
+
+/* // CommonJs module 
+// one file is one mudule
+// Export
+export.addToCart = function(product , quantity){
+  cart.push({product, quantity})
+  console.log(`${quantity} ${product} added to cart (shipping cost is ${shippingCost})`);
+}
+
+//import 
+const {addToCart} = require('./shoppingCart.js') // require need
+ */
+// Introduction of NPM
+import cloneDeep from 'lodash-es';
 const state = {
   car: [
     {
@@ -79,8 +99,20 @@ const state = {
     },
     {
       product: 'bread',
-      quantity: 5,
+      quantity: 10,
     },
   ],
   user: { loggedIn: true },
 };
+
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loggedIn = false;
+console.log(stateClone);
+
+console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
