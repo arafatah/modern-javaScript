@@ -136,5 +136,53 @@ import 'core-js/stable';
 // import 'core-js/stable/array/find';
 // import 'core-js/stable/promise';
 
-// Polifilling async functions 
+// Polifilling async functions
 import 'regenerator-runtime/runtime';
+
+/* 
+- Modern and Clean Code
+
+**Readable code —** 
+
+1. Write code so that others can understand it. 
+2. Write code so that you can understand it in 1 year. 
+3. Avoid too “clever” and overcomplicated solutions 
+4. Use descriptive variable names: What they contain 
+5. Use descriptive function name: what they do. 
+
+**General —-**
+
+1. Use DRY principle (refactor your code) 
+2. Don’t pollute the global namespace, encapsulate instead
+3. Don’t use var 
+4. Use strong type checks (=== and ≠=)
+
+**Functions —-**
+
+1. Generally, functions should do only one thing
+2. Don’t use more that 3 function parameters
+3. Use default parameters whenever possible 
+4. Generally, return the same data type as received 
+5. Use arrow functions when they make code more readable 
+
+**Object-oriented programming (OOP)oriented —-**
+
+1. Use Es6 classes 
+2. Encapsulate data and don’t mutate it from outside of class 
+3. Implement method chaining 
+4. Do not use arrow functions as methods (in regular objects)
+
+**Avoid nested code —-**
+
+1. Use early return (guard clauses)
+2. Use ternary (conditional) or logical operators instead of “ **if** ”
+3. Use multiple if instead of if/else-if 
+4. Avoid for loops, use array methods instead 
+5. Avoid callback-based asynchronous APIs
+
+**Asynchronous code —-** 
+
+1. Consume promise with async/await for best readability 
+2. Whenever possible, run promises in parallel (Promis.all)
+3. Handle errors and promise rejections
+*/
