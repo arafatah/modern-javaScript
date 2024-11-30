@@ -186,3 +186,41 @@ import 'regenerator-runtime/runtime';
 2. Whenever possible, run promises in parallel (Promis.all)
 3. Handle errors and promise rejections
 */
+
+// There are two fundamentally different ways of writing code(Paradigms): Imperative vs Declarative
+/* 
+Imperative ---
+Programmer explains "HOW to do things" 
+We explain the computer every single stem it has to follow to achieve a result. 
+Example: Step-by-step recipe of a cake. 
+
+Declarative ---
+Programmer explains "WHAT to do"
+We simply describe way the computer should achieve the result. 
+The HOW (step-by-step instructions) gets abstracted away.
+Example: A description of a cake.
+
+----
+
+Functional programming ---
+Declarative programming paradigm 
+Based on the idea of writing software by combining many pure functions, avoiding side effects and mutating data. 
+
+Side effect: Modification (mutation) of any data outside of the function (mutating external variables, logging to console, writing to DOM, etc). 
+
+Pure function: Function without side effects, Does not depend on external variables. Given the same inputs, always returns the same outputs. 
+
+Immutability: State (data) is never modified! Instead, state is copied and the copy is mutated and returned. 
+
+> Functional Programming Techniques <
+Try to avoid data mutation 
+Use built-in methods that don't produce side effects 
+Do data transformations with methods such as .map() .filter() .reduce()
+Try to avoid side effects in functions: this is of course not always possible! 
+
+Declarative Syntax 
+Use array and object destructuring 
+Use the spread operator (...)
+Use the ternary(conditional) operator (?:)
+Use template literals (``)
+*/
