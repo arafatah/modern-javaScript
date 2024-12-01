@@ -14,10 +14,12 @@ const budget = Object.freeze([
 budget[0].value = 100;
 // This object now is immutable, it can't be changed or declared new properties
 // Object.freeze is not deep freeze, it will freeze only first level.
+
 const spendingLimits = Object.freeze({
   jonas: 1500,
   matilda: 100,
 });
+
 // spendingLimits.joy = 200;
 // const limit = spendingLimits[user] ? spendingLimits[user] : 0;
 // const limit = spendingLimits[user] || 0;
@@ -85,6 +87,7 @@ const finalBudget = checkExpenses(newBudget3, spendingLimits);
 // console.log(newBudget3);
 console.log(finalBudget);
 
+// Impure
 const logBigExpenses = function (state, bigLimit) {
   const bigExpenses = state
     .filter(entry => entry.value <= -bigLimit)
@@ -110,3 +113,5 @@ const logBigExpenses = function (state, bigLimit) {
 // console.log(budget);
 
 logBigExpenses(finalBudget, 500);
+
+// All console.log are impure
