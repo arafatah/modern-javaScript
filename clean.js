@@ -20,6 +20,39 @@ const spendingLimits = Object.freeze({
   matilda: 100,
 });
 
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//   .then(res => res.json())
+//   .then(data => console.log(data))
+// console.log("Star fetching with top level")
+
+// Top level await - no longer need async 
+// const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+// const data = await res.json();
+// console.log(data);
+// console.log('done with fetching');
+
+const getLastPost = async function () {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const data = await res.json()
+  console.log(data)
+
+  return { title: data.at(-1).title, text: data.at(-1).body }
+}
+
+const lastPost = getLastPost()
+
+
+
+// Not good practice 
+// lastPost.then(last => console.log(last))
+
+const lastPost2 = await getLastPost();
+console.log(lastPost2)
+
+// Blocking code 
+// console.log('Fetching users ')
+// await fetch('https://jsonplaceholder.typicode.com/posts')
+// console.log('Finishes')
 // spendingLimits.joy = 200;
 // const limit = spendingLimits[user] ? spendingLimits[user] : 0;
 // const limit = spendingLimits[user] || 0;
@@ -94,8 +127,8 @@ const logBigExpenses = function (state, bigLimit) {
     .filter(entry => entry.value <= -bigLimit)
     .map(entry => entry.description.slice(-2))
     .join(' / ');
-    // .reduce((str, cur, ) => `${str} / ${cur}`);
-    // .reduce((str, cur) => `${str} / ${cur.description.slice(-2)}`);
+  // .reduce((str, cur, ) => `${str} / ${cur}`);
+  // .reduce((str, cur) => `${str} / ${cur.description.slice(-2)}`);
 
   console.log(bigExpenses);
 

@@ -22,18 +22,20 @@ add('apple 🍎', 11);
 
 console.log(cart);
 
-// Import is not copy of export it's just live connection.
+// Import is not c of export it's just live connection.
 
 // fetch('https://jsonplaceholder.typicode.com/todos')
 //   .then(res => res.json())
 //   .then(data => console.log(data));
 
 // Example of top level await
-/* console.log('starting fetching');
+/* 
+console.log('starting fetching');
 const res = await fetch('https://jsonplaceholder.typicode.com/todos');
 const data = await res.json();
 console.log(data);
-console.log('done with fetching'); */
+console.log('done with fetching');
+*/
 
 /* const getLastPost = async function () {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
