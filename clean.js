@@ -31,28 +31,63 @@ const spendingLimits = Object.freeze({
 // console.log(data);
 // console.log('done with fetching');
 
-const getLastPost = async function () {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const data = await res.json()
-  console.log(data)
+// const getLastPost = async function () {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+//   const data = await res.json()
+//   console.log(data)
 
-  return { title: data.at(-1).title, text: data.at(-1).body }
-}
+//   return { title: data.at(-1).title, text: data.at(-1).body }
+// }
 
-const lastPost = getLastPost()
+// const lastPost = getLastPost()
 
 
 
 // Not good practice 
 // lastPost.then(last => console.log(last))
 
-const lastPost2 = await getLastPost();
-console.log(lastPost2)
+// const lastPost2 = await getLastPost();
+// console.log(lastPost2)
 
 // Blocking code 
 // console.log('Fetching users ')
 // await fetch('https://jsonplaceholder.typicode.com/posts')
 // console.log('Finishes')
+
+
+const shoppingCart2 = (function () {
+  const cart = [];
+  const shippingCost = 10;
+  const totalPrice = 237;
+  const totalQuantity = 23;
+
+  const addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(
+      `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
+    );
+  };
+
+  const orderStock = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} Ordered from supplier`);
+  };
+
+  return {
+    addToCart,
+    cart,
+    totalPrice,
+    totalQuantity,
+  };
+})();
+
+shoppingCart2.addToCart('apple', 30);
+shoppingCart2.addToCart('pizza', 30);
+console.log(shoppingCart2);
+console.log(shoppingCart2.shippingCost);
+
+
+
 // spendingLimits.joy = 200;
 // const limit = spendingLimits[user] ? spendingLimits[user] : 0;
 // const limit = spendingLimits[user] || 0;

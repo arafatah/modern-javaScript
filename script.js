@@ -69,7 +69,7 @@ const shoppingCart2 = (function () {
   return {
     addToCart,
     cart,
-    totalPrice,
+    totalPrice, 
     totalQuantity,
   };
 })(); 
