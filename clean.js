@@ -51,9 +51,10 @@ const newBudget2 = addExpense(
   newBudget1,
   spendingLimits,
   100,
-  'Going to movies 🍿',
+  'Going to Movies🍿',
   'Matilda'
 );
+
 const newBudget3 = addExpense(newBudget2, spendingLimits, 200, 'Stuff', 'Jay');
 // console.log(newBudget1);
 // console.log(newBudget2);
@@ -92,8 +93,9 @@ const logBigExpenses = function (state, bigLimit) {
   const bigExpenses = state
     .filter(entry => entry.value <= -bigLimit)
     .map(entry => entry.description.slice(-2))
-    .join(' / ')
+    .join(' / ');
     // .reduce((str, cur, ) => `${str} / ${cur}`);
+    // .reduce((str, cur) => `${str} / ${cur.description.slice(-2)}`);
 
   console.log(bigExpenses);
 
@@ -114,4 +116,4 @@ const logBigExpenses = function (state, bigLimit) {
 
 logBigExpenses(finalBudget, 500);
 
-// All console.log are impure
+// Note: All console.log are impure
