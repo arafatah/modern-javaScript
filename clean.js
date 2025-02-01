@@ -185,3 +185,12 @@ const logBigExpenses = function (state, bigLimit) {
 logBigExpenses(finalBudget, 500);
 
 // Note: All console.log are impure
+
+// Export 
+export.addToCart = function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(`${quantity} ${product} added to cart (shipping cost is ${shippingCost})`)
+};
+
+// Import 
+const { addToCart } = require('./shoppingCart.js');
